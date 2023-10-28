@@ -47,8 +47,6 @@ public class UserDaoImpl implements UserDao {
       return null;
     }
   }
-
-
   @Override
   public void updateOtp(String mobileNumber, String otp) {
     String sql = "UPDATE user_profile SET otp =:otp WHERE mobile_number =:mobile_number";
