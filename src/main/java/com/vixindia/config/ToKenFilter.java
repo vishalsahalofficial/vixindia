@@ -40,7 +40,7 @@ public class ToKenFilter implements Filter {
       String request_type = request.getMethod();
       String request_endpoint = request.getRequestURI();
 
-      if (request_endpoint.contains("generate")) {
+      if (request_endpoint.contains("generate") || request_endpoint.contains("current_location")) {
         chain.doFilter(request, response);
         return;
       }

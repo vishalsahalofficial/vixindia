@@ -21,7 +21,7 @@ public class LoginController {
   @Autowired
   LoginService loginService;
 
-  @CrossOrigin(origins = "http://localhost:63342")
+  @CrossOrigin(origins = "http://localhost:8081")
   @PostMapping("/login/generate/otp")
   public ResponseEntity<?> login(@RequestParam("mobile_number") String mobileNumber) {
     try {
@@ -37,7 +37,7 @@ public class LoginController {
   }
 
 
-  @CrossOrigin(origins = "http://localhost:63342")
+  @CrossOrigin(origins = "http://localhost:8081")
   @PostMapping("vixindia/verify/otp")
   public ResponseEntity<?> verify(@RequestParam("mobile_number") String mobileNumber,
       @RequestParam("otp") String
