@@ -5,7 +5,6 @@ import com.vixindia.login.service.OtpService;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.Objects;
-import lombok.var;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -127,7 +126,8 @@ public class SignupDaoImpl implements SignupDao {
     try {
       String sql = "select is_mobile_registered from user_verification where mobile_number = '"
           + mobileNumber + "'";
-      var data = jdbcTemplate.getJdbcTemplate().queryForMap(sql);
+//      var data = jdbcTemplate.getJdbcTemplate().queryForMap(sql);
+      Map<String, Object> data = jdbcTemplate.getJdbcTemplate().queryForMap(sql);
       isMobileVerified = (boolean) data.getOrDefault("is_mobile_registered", false);
 
       if (isMobileVerified) {
