@@ -6,8 +6,6 @@ COPY . /app
 
 RUN mvn clean install
 
-FROM openjdk:11-jre-slim
-
 WORKDIR /app
 
 COPY --from=0 /app/target/*.jar /app/vixindia.jar
